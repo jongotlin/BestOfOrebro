@@ -1,0 +1,47 @@
+{
+    "name": "jongotlin/bestoforebro",
+    "description": "bestoforebro.se - Most shared articles from Örebro located media.",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.2.*",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/doctrine-bundle": "1.2.*",
+        "twig/extensions": "1.0.*",
+        "symfony/assetic-bundle": "2.1.*",
+        "sensio/distribution-bundle": "2.2.*",
+        "sensio/framework-extra-bundle": "2.2.*",
+        "sensio/generator-bundle": "2.2.*",
+        "twitter/bootstrap" : "v2.3.0",
+        "leafo/lessphp": "*",
+        "kriswallsmith/buzz": "dev-master",
+        "fkr/simplepie-bundle": "1.0.*"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ],
+        "post-update-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "minimum-stability": "alpha",
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web",
+        "branch-alias": {
+            "dev-master": "2.2-dev"
+        }
+    }
+}

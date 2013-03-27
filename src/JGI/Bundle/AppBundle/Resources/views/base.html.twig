@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Best of Örebro{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% stylesheets
+            '%kernel.root_dir%/../vendor/twitter/bootstrap/less/bootstrap.less'
+            '%kernel.root_dir%/../vendor/twitter/bootstrap/less/responsive.less'
+            '@JGIAppBundle/Resources/less/main.less'
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        <link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div id="fb-root"></div>
+
+        <div class="navbar navbar-fixed-top" >
+            <div class="navbar-inner">
+                <div class="container">
+                    <a href="/" class="brand">Best of Örebro</a> <span class="punchline">– Mest delat från Örebros medier.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container posts">
+            {% block body %}{% endblock %}
+        </div>
+
+        <div class="container">
+            <p>
+                <strong>Best of Örebro</strong> är en sida som visar de mest delade nyheterna från Örebros lokala medier under de senaste 24 timmarna. Sajten är gjord av Jon Gotlin (<a href="http://www.twitter.com/jongotlin">@jongotlin</a>) och finns att ladda ner på <a href="http://github.com/jongotlin/BestOfOrebro">GitHub</a>. Idén till bestoforebro.se är rakt av plankad från <a href="http://www.bestofna.se">bestofna.se</a> som i sin tur är plankad av <a href="http://www.bestofsvt.se">bestofsvt.se</a>.
+            </p>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="sv">Tweeta</a>
+            <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+        </div>
+
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/sv_SE/all.js#xfbml=1&appId=251903824846999";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+    </body>
+</html>

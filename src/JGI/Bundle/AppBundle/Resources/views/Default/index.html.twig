@@ -1,0 +1,28 @@
+{% extends 'JGIAppBundle::base.html.twig' %}
+
+{% block body %}
+
+{% if posts | length > 0 %}
+    {% for post in posts %}
+        {% if (loop.index-1) is divisibleby(3) %}
+        <div class="row">
+        {% endif %}
+            <div class="span4">
+                <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                <p>
+                    <small>{{ post.media.name }}</small> {{ post.body | truncate(150) }}<br />
+                    <span class="badge badge-shares">{{ post.facebookLikes + post.twitterShares }} delningar</span>
+                </p>
+            </div>
+        {% if loop.index is divisibleby(3) %}
+        </div>
+        {% endif %}
+    {% endfor %}
+
+    {% if posts|length is not divisibleby(3) %}
+    </div>
+    {% endif %}
+{% endif %}
+
+
+{% endblock %}

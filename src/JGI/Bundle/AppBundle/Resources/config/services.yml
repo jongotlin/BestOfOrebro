@@ -1,0 +1,24 @@
+services:
+    buzz.client:
+        class: Buzz\Client\FileGetContents
+        calls: 
+             - [setTimeout, [30]]
+
+    buzz.message_factory:
+        class: Buzz\Message\Factory\Factory
+
+    buzz.browser:
+       class: Buzz\Browser
+       arguments:
+             - @buzz.client
+             - @buzz.message_factory
+
+    social_counter:
+        class: JGI\Bundle\AppBundle\SocialCounter
+        arguments:
+            - @buzz.browser
+
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }

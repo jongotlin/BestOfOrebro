@@ -1,0 +1,5 @@
+jgi_app:
+    resource: "@JGIAppBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
