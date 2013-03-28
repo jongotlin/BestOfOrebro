@@ -15,7 +15,7 @@ class SocialCounter
 
     public function getFacebookLikes($url)
     {
-        $facebookContent = json_decode($this->buzz->get('https://graph.facebook.com/'.urlencode($url))->getContent(), true);
+        $facebookContent = json_decode($this->buzz->get('http://graph.facebook.com/'.urlencode($url))->getContent(), true);
         $facebookLikes = 0;
         if (is_array($facebookContent) && array_key_exists('shares', $facebookContent)) {
             $facebookLikes = $facebookContent['shares'];
