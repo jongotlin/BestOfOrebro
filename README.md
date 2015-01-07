@@ -1,4 +1,4 @@
 BestOfOrebro
 ============
 
-bestoforebro.se - Most shared articles from Örebro located media.
+bestoforebro.jon.se - Most shared articles from Örebro located media.
