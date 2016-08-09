@@ -25,7 +25,7 @@ class SocialCounter
 
     public function getTwitterShares($url)
     {
-        $twitterContent = json_decode($this->buzz->get('http://urls.api.twitter.com/1/urls/count.json?url='.urlencode($url))->getContent(), true);
+        $twitterContent = json_decode($this->buzz->get('http://public.newsharecounts.com/count.json?url='.urlencode($url))->getContent(), true);
         $twitterShares = 0;
         if (is_array($twitterContent) && array_key_exists('count', $twitterContent)) {
             $twitterShares = $twitterContent['count'];
